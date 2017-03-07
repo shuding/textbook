@@ -1,0 +1,15 @@
+{
+  "name": "textbook",
+  "version": "0.0.1",
+  "description": "A beautiful font manager for macOS, Linux and Windows.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quietshu/textbook.git"
+  },
+  "author": "Shu Ding <ds303077135@gmail.com>",
+  "license": "MIT"
+}
