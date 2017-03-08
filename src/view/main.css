@@ -11,17 +11,51 @@ body {
 }
 
 header {
+  position: absolute;
+  z-index: 1;
   height: 38px;
   width: 100%;
   top: 0;
   left: 0;
   text-align: center;
   line-height: 38px;
-  background: white;
-  /*background: rgba(255, 255, 255, 0.82);*/
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
-  /*-webkit-backdrop-filter: blur(10px);*/
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.13);
   -webkit-app-region: drag;
+  overflow: hidden;
+}
+
+header > span {
+  display: block;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+}
+
+nav {
+  position: absolute;
+  right: 15px;
+  top: 0;
+  line-height: 40px;
+  color: #636363;
+}
+
+nav > span {
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+nav > span:active {
+  color: black;
+}
+
+nav > span .search {
+  -webkit-appearance: none;
+  border: none;
+  padding: 4px 0;
+  font-size: 1em;
+  width: 100px;
+  cursor: text;
+  outline: none;
+  background: transparent;
 }
 
 #container {
@@ -37,12 +71,44 @@ header {
   padding: 0 10px;
   flex: 1;
   /* margin-top: -40px; */
+  padding-top: 40px;
+  align-content: flex-start;
+}
+
+#fonts.layout-line .font-grid {
+  flex: 100% 0 0;
 }
 
 .font-grid {
+  position: relative;
   flex: 50% 0 0;
   padding: 0 10px;
   margin: 20px 0;
+}
+.font-grid .heart-font {
+  display: none;
+  margin: 0 .5em;
+  color: #e4e4e4;
+  cursor: pointer;
+}
+.font-grid .heart-font:hover {
+  color: rgba(255, 20, 95, 0.28);
+}
+.font-grid .heart-font.active {
+  color: #ff0f60;
+}
+.heart-btn.active {
+  color: #ff0f60;
+}
+.font-grid:hover {
+  background: #f9f9f9;
+}
+.font-grid:hover .heart-font {
+  display: inline-block;
+}
+
+.font-grid.hide {
+  display: none;
 }
 
 p.font-name {
@@ -65,7 +131,8 @@ p.font-preview {
   display: block;
   font-size: 2em;
   margin: .8em 1em 30px 0;
-  line-height: 1.35em;
+  /*line-height: 1.35em;*/
+  word-break: break-word;
   -webkit-user-select: text;
   -webkit-user-modify: read-write-plaintext-only;
 }
@@ -77,4 +144,17 @@ p.font-preview:focus {
 p.font-preview::selection {
   background: #ff0f60;
   color: white;
+}
+
+.search-container {
+  overflow: hidden;
+  width: 110px;
+  margin-right: -10px;
+  text-align: left;
+  display: inline-block;
+  transition: width .1s ease;
+}
+
+.search-container.hide {
+  width: 0;
 }

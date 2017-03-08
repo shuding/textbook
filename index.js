@@ -7,6 +7,8 @@ const createRPC = require('./src/common/rpc')
 
 const fontLoader = require('./src/common/loader')
 
+app.commandLine.appendSwitch('--enable-experimental-web-platform-features')
+
 app.on('window-all-closed', function () {
   app.quit()
 })
@@ -18,7 +20,7 @@ app.on('ready', function () {
     show: false,
     titleBarStyle: 'hidden-inset',
     minHeight: 190,
-    minWidth: 370,
+    minWidth: 550,
     webPreferences: {
       experimentalFeatures: true
     }
